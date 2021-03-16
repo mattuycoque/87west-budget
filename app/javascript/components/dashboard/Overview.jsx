@@ -32,7 +32,7 @@ class Overview extends React.Component {
   goalComparisonDisplay() {
     if (!this.props.monthlyGoal) { return <a className="text-small" onClick={this.openGoal}>Set a monthly total goal</a> }
     const diff = this.props.monthlyGoal - this.totalSpend();
-    const diffDisplay = (diff >= 0) ? <b className="text-muted">{Numerics.centsToDollars(diff)} remaining</b> : <b className="text-warning">{Numerics.centsToDollars(Math.abs(diff))} over</b>;
+    const diffDisplay = (diff >= 0) ? <b className="text-muted">{Numerics.centsToPesos(diff)} remaining</b> : <b className="text-warning">{Numerics.centsToPesos(Math.abs(diff))} over</b>;
 
     return (
       <div className="flex">{diffDisplay} <img className="hover-pointer icon-default dim-til-hover" src={window.iconEdit} onClick={this.openGoal} /></div>
@@ -51,7 +51,7 @@ class Overview extends React.Component {
         <div className="mb-10">{moment().format('MMMM')}</div>
 
         <div className="flex row-flex flex-space-between flex-baseline mb-10">
-          <div><h1>{Numerics.centsToDollars(this.totalSpend())}</h1></div>
+          <div><h1>{Numerics.centsToPesos(this.totalSpend())}</h1></div>
           <div>{this.goalComparisonDisplay()}</div>
         </div>
 

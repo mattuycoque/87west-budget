@@ -22,7 +22,7 @@ class CurrencyInput extends React.Component {
 
   render() {
     const defaultMaskOptions = {
-      prefix: '$',
+      prefix: 'P',
       includeThousandsSeparator: true,
       thousandsSeparatorSymbol: ',',
       allowDecimal: true,
@@ -36,7 +36,7 @@ class CurrencyInput extends React.Component {
 
     return (
       <MaskedInput
-        placeholder="$0.00"
+        placeholder="P0.00"
         inputMode="decimal"
         mask={currencyMask}
         onBlur={this.handleBlur}
