@@ -22,7 +22,7 @@ class CurrencyInput extends React.Component {
 
   render() {
     const defaultMaskOptions = {
-      prefix: 'P',
+      prefix: '$',
       includeThousandsSeparator: true,
       thousandsSeparatorSymbol: ',',
       allowDecimal: true,
