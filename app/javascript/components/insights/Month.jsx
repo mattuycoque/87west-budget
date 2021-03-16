@@ -93,7 +93,7 @@ class Year extends React.Component {
     return (
       <div className="month flex flex-space-between">
         <b>Goal comparison</b>
-        <h2 className={amountOver <= 0 ? 'text-success' : 'text-warning'}>{amountOver >= 0 ? '+' : '-'}{Numerics.centsToPesos(Math.abs(amountOver))}</h2>
+        <h2 className={amountOver <= 0 ? 'text-success' : 'text-warning'}>{amountOver >= 0 ? '+' : '-'}{Numerics.centsToDollars(Math.abs(amountOver))}</h2>
       </div>
     )
   }
@@ -111,7 +111,7 @@ class Year extends React.Component {
     return (
       <div className="month flex flex-space-between">
         <b>Daily average</b>
-        <h2>{Numerics.centsToPesos(averageSpend)}</h2>
+        <h2>{Numerics.centsToDollars(averageSpend)}</h2>
       </div>
     )
   }

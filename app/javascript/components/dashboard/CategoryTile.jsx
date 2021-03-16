@@ -28,7 +28,7 @@ class CategoryTile extends React.Component {
   goalComparisonDisplay() {
     if (!this.props.categoryWithExpensesAndSpend.monthly_goal) { return 'No goal set'; }
     const diff = this.props.categoryWithExpensesAndSpend.monthly_goal - this.props.categoryWithExpensesAndSpend.spend;
-    return (diff >= 0) ? `${Numerics.centsToPesos(diff)} remaining` : `${Numerics.centsToPesos(Math.abs(diff))} over`;
+    return (diff >= 0) ? `${Numerics.centsToDollars(diff)} remaining` : `${Numerics.centsToDollars(Math.abs(diff))} over`;
   }
 
   normalizedPercentage() {
@@ -60,7 +60,7 @@ class CategoryTile extends React.Component {
             <div className="text-muted">{this.goalComparisonDisplay()}</div>
           </div>
 
-          <h2>{Numerics.centsToPesos(this.props.categoryWithExpensesAndSpend.spend)}</h2>
+          <h2>{Numerics.centsToDollars(this.props.categoryWithExpensesAndSpend.spend)}</h2>
         </div>
 
         <Progress data={[{ percentage: this.normalizedPercentage() }]} small={true} />

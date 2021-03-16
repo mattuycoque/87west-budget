@@ -1,7 +1,7 @@
 import moment from "moment";
 
 const Numerics = {
-  centsToPesos(value) {
+  centsToDollars(value) {
     if (value == null || value == undefined) return '';
 
     try {
